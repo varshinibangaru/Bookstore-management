@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book | BookBloom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="update">
+    <header class="navbar">
+        <a class="brand" href="index.html"><span class="brand-icon">B</span> BookBloom</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="add.html">Add Book</a>
+            <a href="view.html">View Books</a>
+            <a class="active" href="update.html">Update</a>
+            <a href="search.html">Search</a>
+            <a href="delete.html">Delete</a>
+        </nav>
+    </header>
+
+    <main class="container narrow">
+        <div class="page-heading">
+            <span class="eyebrow">EDIT INVENTORY</span>
+            <h1>Update book details</h1>
+            <p>Load a book by its ID, make your changes, and save.</p>
+        </div>
+
+        <section class="panel">
+            <form id="loadUpdateForm">
+                <div class="field">
+                    <label for="updateId">Book ID</label>
+                    <div class="inline-field">
+                        <input id="updateId" type="number" min="1" step="1" placeholder="Enter book ID" required>
+                        <button class="btn btn-primary" type="submit">Load Book</button>
+                    </div>
+                </div>
+            </form>
+            <div id="updateLoadMessage" class="message" role="status"></div>
+
+            <div class="soft-divider"></div>
+
+            <form id="updateForm" hidden>
+                <div class="form-grid">
+                    <div class="field full">
+                        <label for="updateTitle">Book title</label>
+                        <input id="updateTitle" maxlength="150" required>
+                    </div>
+                    <div class="field">
+                        <label for="updateAuthor">Author</label>
+                        <input id="updateAuthor" maxlength="100" required>
+                    </div>
+                    <div class="field">
+                        <label for="updateCategory">Category</label>
+                        <input id="updateCategory" maxlength="60" required>
+                    </div>
+                    <div class="field">
+                        <label for="updatePrice">Price (₹)</label>
+                        <input id="updatePrice" type="number" min="0" step="0.01" required>
+                    </div>
+                    <div class="field">
+                        <label for="updateStock">Stock quantity</label>
+                        <input id="updateStock" type="number" min="0" step="1" required>
+                    </div>
+                </div>
+                <div id="updateMessage" class="message" role="status"></div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                    <button class="btn btn-light" id="cancelUpdate" type="button">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <p class="back-link"><a href="view.html">← Back to all books</a></p>
+        <footer class="footer">BookBloom © 2026</footer>
+    </main>
+</body>
+</html>

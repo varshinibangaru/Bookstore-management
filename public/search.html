@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Books | BookBloom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="search">
+    <header class="navbar">
+        <a class="brand" href="index.html"><span class="brand-icon">B</span> BookBloom</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="add.html">Add Book</a>
+            <a href="view.html">View Books</a>
+            <a href="update.html">Update</a>
+            <a class="active" href="search.html">Search</a>
+            <a href="delete.html">Delete</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-heading">
+            <span class="eyebrow">FIND YOUR NEXT READ</span>
+            <h1>Search your collection</h1>
+            <p>Search by book ID, title, author, or category.</p>
+        </div>
+
+        <section class="panel">
+            <form id="searchForm">
+                <div class="field">
+                    <label for="searchInput">Search books</label>
+                    <div class="inline-field">
+                        <input id="searchInput" type="search" placeholder="Try “Atomic Habits” or “Fiction”">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                        <button class="btn btn-light" id="clearSearch" type="button">Clear</button>
+                    </div>
+                </div>
+            </form>
+            <p id="searchCount" class="muted">Loading books...</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Book title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTableBody">
+                        <tr><td colspan="6" class="empty-state">Loading books...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">BookBloom © 2026</footer>
+    </main>
+</body>
+</html>

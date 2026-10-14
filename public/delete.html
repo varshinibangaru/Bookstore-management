@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Book | BookBloom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="delete">
+    <header class="navbar">
+        <a class="brand" href="index.html"><span class="brand-icon">B</span> BookBloom</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="add.html">Add Book</a>
+            <a href="view.html">View Books</a>
+            <a href="update.html">Update</a>
+            <a href="search.html">Search</a>
+            <a class="active" href="delete.html">Delete</a>
+        </nav>
+    </header>
+
+    <main class="container narrow">
+        <div class="page-heading">
+            <span class="eyebrow">INVENTORY MANAGEMENT</span>
+            <h1>Delete a book</h1>
+            <p>Find the record first and confirm before removing it.</p>
+        </div>
+
+        <section class="panel">
+            <form id="loadDeleteForm">
+                <div class="field">
+                    <label for="deleteId">Book ID</label>
+                    <div class="inline-field">
+                        <input id="deleteId" type="number" min="1" step="1" placeholder="Enter book ID" required>
+                        <button class="btn btn-primary" type="submit">Find Book</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="deleteMessage" class="message" role="status"></div>
+
+            <section id="deletePreview" class="delete-preview" hidden>
+                <span class="warning-icon">!</span>
+                <h2 id="deleteTitle">Book details</h2>
+                <div id="deleteDetails" class="details-grid"></div>
+                <p class="warning-text">This action permanently removes this book from your inventory.</p>
+                <button id="confirmDelete" class="btn btn-danger" type="button">Delete This Book</button>
+            </section>
+        </section>
+
+        <p class="back-link"><a href="view.html">← Back to all books</a></p>
+        <footer class="footer">BookBloom © 2026</footer>
+    </main>
+</body>
+</html>

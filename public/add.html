@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book | BookBloom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="add">
+    <header class="navbar">
+        <a class="brand" href="index.html"><span class="brand-icon">B</span> BookBloom</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a class="active" href="add.html">Add Book</a>
+            <a href="view.html">View Books</a>
+            <a href="update.html">Update</a>
+            <a href="search.html">Search</a>
+            <a href="delete.html">Delete</a>
+        </nav>
+    </header>
+
+    <main class="container narrow">
+        <div class="page-heading">
+            <span class="eyebrow">INVENTORY MANAGEMENT</span>
+            <h1>Add a new book</h1>
+            <p>Enter the book details below to add it to your collection.</p>
+        </div>
+
+        <section class="panel">
+            <form id="addForm">
+                <div class="form-grid">
+                    <div class="field full">
+                        <label for="title">Book title</label>
+                        <input id="title" name="title" maxlength="150" placeholder="e.g. The Alchemist" required>
+                    </div>
+                    <div class="field">
+                        <label for="author">Author</label>
+                        <input id="author" name="author" maxlength="100" placeholder="Author name" required>
+                    </div>
+                    <div class="field">
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">Choose a category</option>
+                            <option>Fiction</option>
+                            <option>Non-Fiction</option>
+                            <option>Technology</option>
+                            <option>Education</option>
+                            <option>Biography</option>
+                            <option>Self-Help</option>
+                            <option>Science</option>
+                            <option>Children</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="price">Price (₹)</label>
+                        <input id="price" name="price" type="number" min="0" step="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="field">
+                        <label for="stock">Stock quantity</label>
+                        <input id="stock" name="stock" type="number" min="0" step="1" placeholder="0" required>
+                    </div>
+                </div>
+                <div id="formMessage" class="message" role="status"></div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Add Book</button>
+                    <button class="btn btn-light" type="reset">Clear Form</button>
+                </div>
+            </form>
+        </section>
+        <p class="back-link"><a href="view.html">← Back to all books</a></p>
+        <footer class="footer">BookBloom © 2026</footer>
+    </main>
+</body>
+</html>

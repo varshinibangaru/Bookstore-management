@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Books | BookBloom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="view">
+    <header class="navbar">
+        <a class="brand" href="index.html"><span class="brand-icon">B</span> BookBloom</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="add.html">Add Book</a>
+            <a class="active" href="view.html">View Books</a>
+            <a href="update.html">Update</a>
+            <a href="search.html">Search</a>
+            <a href="delete.html">Delete</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-heading heading-row">
+            <div>
+                <span class="eyebrow">YOUR COLLECTION</span>
+                <h1>Book inventory</h1>
+                <p>Browse your complete collection and view individual book details.</p>
+            </div>
+            <a class="btn btn-primary" href="add.html">＋ Add Book</a>
+        </div>
+
+        <section class="panel">
+            <div class="toolbar">
+                <div>
+                    <h2>All books</h2>
+                    <p class="muted">Latest records appear first.</p>
+                </div>
+                <button class="btn btn-light" id="refreshBooks" type="button">↻ Refresh</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Book title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="booksTableBody">
+                        <tr><td colspan="7" class="empty-state">Loading books...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="viewMessage" class="message" role="status"></div>
+        </section>
+
+        <section class="panel details-panel" id="bookDetails" hidden>
+            <div class="toolbar">
+                <div>
+                    <span class="eyebrow">BOOK INFORMATION</span>
+                    <h2 id="detailTitle">Book details</h2>
+                </div>
+                <button type="button" class="btn btn-light" id="closeDetails">Close</button>
+            </div>
+            <div id="detailContent" class="details-grid"></div>
+        </section>
+
+        <footer class="footer">BookBloom © 2026</footer>
+    </main>
+</body>
+</html>
